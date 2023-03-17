@@ -25,14 +25,14 @@ def parse_args():
     parser.add_argument('--epoch', type=int, default=80, help='number of training epochs')
     parser.add_argument('--init_epoch', type=int, default=10, help='number of training epochs in initialization stage')
     parser.add_argument('--batch_size', type=int, default=8, help='batch size')
-    parser.add_argument('--save_freq', type=int, default=2, help='number of training epochs after every which model checkpoint is saved')
+    parser.add_argument('--save_freq', type=int, default=5, help='number of training epochs after every which model checkpoint is saved')
     parser.add_argument('--init_lr', type=float, default=2e-4, help='learning rate at initialization stage')
     parser.add_argument('--g_lr', type=float, default=2e-5, help='initial learning rate of the generator')
     parser.add_argument('--d_lr', type=float, default=1e-5, help='initial learning rate of the discriminator')
     parser.add_argument('--img_size', type=list, default=[256, 256], help='size of input image')
     parser.add_argument('--img_ch', type=int, default=3, help='number of image channel')
     parser.add_argument('--sn', type=str2bool, default=True, help='whether to use spectral norm')
-    parser.add_argument('--val_freq', type=int, default=1, help='number of training epochs after every which validation is performed')
+    parser.add_argument('--val_freq', type=int, default=5, help='number of training epochs after every which validation is performed')
 
 
     parser.add_argument('--checkpoint_dir', type=str, default='checkpoint',
