@@ -1,0 +1,1 @@
+directory to save model checkpoint during or after training, you can also download and put the pretrained model checkpoint folders into this directory for direct model inference.
