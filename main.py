@@ -13,7 +13,7 @@ def parse_args():
     desc = "AnimeStyle"
     parser = argparse.ArgumentParser(description=desc)
 
-    parser.add_argument('--phase', type=str, default='test', help='train or test?')
+    parser.add_argument('--phase', type=str, default='train', help='train or test?')
     parser.add_argument('--dataset', type=str, default='TWR', help='dataset name')
     parser.add_argument('--g_adv_weight', type=float, default=300.0, help='weight of adversarial loss for generator')
     parser.add_argument('--d_adv_weight', type=float, default=300.0, help='weight of adversarial loss for discriminator')
