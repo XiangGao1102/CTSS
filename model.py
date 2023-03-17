@@ -54,8 +54,8 @@ class AnimeStyle(object):
         self.anime = tf.placeholder(tf.float32, [self.batch_size, self.img_size[0], self.img_size[1], self.img_ch], name='anime')
         self.test_real = tf.placeholder(tf.float32, [1, None, None, self.img_ch], name='test_input')
 
-        self.real_image_generator = ImageGenerator('../dataset/train_photo', self.batch_size)
-        self.anime_image_generator = ImageGenerator(f'../dataset/{self.dataset_name}', self.batch_size)
+        self.real_image_generator = ImageGenerator('./dataset/train_photo', self.batch_size)
+        self.anime_image_generator = ImageGenerator(f'./dataset/{self.dataset_name}', self.batch_size)
         self.dataset_num = max(self.real_image_generator.num_images, self.anime_image_generator.num_images)
 
         self.vgg = Vgg19()
@@ -234,7 +234,7 @@ class AnimeStyle(object):
 
             if epoch > self.init_epoch and np.mod(epoch, self.val_freq) == 0:
                 """ Result Image """
-                val_files = glob('../dataset/{}/*.*'.format('val'))
+                val_files = glob('./dataset/{}/*.*'.format('val'))
                 save_path = './{}/{:03d}/'.format(self.sample_dir, epoch)
                 check_folder(save_path)
                 for i, sample_file in enumerate(val_files):
@@ -324,7 +324,7 @@ class AnimeStyle(object):
         else:
             print(" [!] Load failed...")
 
-        val_files = glob('../dataset/{}/*.*'.format('test'))
+        val_files = glob('./dataset/{}/*.*'.format('test'))
         save_path = self.result_dir + os.path.sep + self.model_dir + os.path.sep
         check_folder(save_path)
         for i, sample_file in enumerate(val_files):
@@ -339,14 +339,14 @@ class AnimeStyle(object):
 
 
 
-    def test_with_step(self, step):
+    def test_epoch(self, epoch):
         # evaluate model trained after a specific epoch
         self.saver = tf.train.Saver()
         tf.global_variables_initializer().run()
-        self.load_with_step(self.checkpoint_dir, step)
+        self.load_with_step(self.checkpoint_dir, epoch)
 
-        val_files = glob('../dataset/{}/*.*'.format('test'))
-        save_path = self.result_dir + os.path.sep + self.model_dir + os.path.sep + str(step) + os.path.sep
+        val_files = glob('./dataset/{}/*.*'.format('test'))
+        save_path = self.result_dir + os.path.sep + self.model_dir + os.path.sep + str(epoch) + os.path.sep
         check_folder(save_path)
         for i, sample_file in enumerate(val_files):
             print('val: ' + str(i) + sample_file)
@@ -360,11 +360,11 @@ class AnimeStyle(object):
 
 
 
-    def test_all_step(self):
+    def test_all_epochs(self):
         # evaluate model trained after all training epochs to select best results
         self.saver = tf.train.Saver()
         for file in os.listdir('./checkpoint/' + self.model_dir):
             if self.model_name in file:
-                step = file.split('-')[1].split('.')[0]
-                self.test_with_step(step)
+                epoch = file.split('-')[1].split('.')[0]
+                self.test_epoch(epoch)
 
