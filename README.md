@@ -40,9 +40,10 @@ The pretrained models of different cartoon styles including "The Wind Rises" (TW
 To use these pretrained models for direct inference (testing), put these checkpoint folders into **checkpoint** directory.
 ## 3. Datasets ##
 The used datasets of this project can be downloaded from <br> https://drive.google.com/drive/folders/1Aht8K7X4le_1l8VWXSUuZG7mHp44Y1-X <br> where **train_photo** is the source-domain real-world image dataset;
-**TWR**, **DB**, **CSC** are different target-domain cartoon-style image datasets. All these folders should be placed into the **dataset** folder of this project.
+**TWR**, **DB**, **CSC** are different target-domain cartoon-style image datasets. All these folders should be placed into the **dataset** folder of this project. <br>
 In addition, a **val** folder and a **test** folder should also be prepared and put in the **dataset** folder for validation and testing respectively. You can include any high-resolution real-world images into 
-these two folders. The datasets folder structure should be: <br>
+these two folders. <br>
+The datasets folder structure should be: <br>
 |--**dataset** <br>
 |&nbsp;&nbsp;&nbsp;|--**train_photo** <br>
 |&nbsp;&nbsp;&nbsp;|--**TWR** <br>
