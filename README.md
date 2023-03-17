@@ -38,7 +38,18 @@ The pretrained models of different cartoon styles including "The Wind Rises" (TW
 | CSC  | AnimeStyle_CSC_g300.0_d300.0_con1.5_color15.0_tv1.0 |
 
 To use these pretrained models for direct inference (testing), put these checkpoint folders into **checkpoint** directory.
-
+## 3. Datasets ##
+The used datasets of this project can be downloaded from <br> https://drive.google.com/drive/folders/1Aht8K7X4le_1l8VWXSUuZG7mHp44Y1-X <br> where **train_photo** is the source-domain real-world image dataset;
+**TWR**, **DB**, **CSC** are different target-domain cartoon-style image datasets. All these folders should be placed into the **dataset** folder of this project.
+In addition, a **val** folder and a **test** folder should also be prepared and put in the **dataset** folder for validation and testing respectively. You can include any high-resolution real-world images into 
+these two folders. The datasets folder structure should be: <br>
+|--**dataset** <br>
+|&nbsp;&nbsp;&nbsp;|--**train_photo** <br>
+|&nbsp;&nbsp;&nbsp;|--**TWR** <br>
+|&nbsp;&nbsp;&nbsp;|--**DB** <br>
+|&nbsp;&nbsp;&nbsp;|--**CSC** <br>
+|&nbsp;&nbsp;&nbsp;|--**val** <br>
+|&nbsp;&nbsp;&nbsp;|--**test**
 # How to train or test models #
 The training or testing of the model is determined by the parsing argument **--phase** in main.py:
 |  Phase   | Command  |
