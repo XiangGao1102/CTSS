@@ -37,11 +37,11 @@ def save_images(images, dataset_name, image_path, photo_path=None):
     images = inverse_transform(images.squeeze())
     adjust_config = None
     if dataset_name == 'TWR':
-        adjust_config = [0.6, 50, 10]
+        adjust_config = [0.5, 50, 10]
     elif dataset_name == 'CSC':
-        adjust_config = [0.5, 50, 30]
+        adjust_config = [0.42, 70, 25]
     elif dataset_name == 'DB':
-        adjust_config = [0.4, 20, 20]
+        adjust_config = [0.35, 25, 20]
     else:
         raise ValueError('invalid dataset name.')
     if photo_path:
