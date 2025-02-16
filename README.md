@@ -1,5 +1,5 @@
 # Learning to Incorporate Texture Saliency Adaptive Attention to Image Cartoonization
-Code of paper "Learning to Incorporate Texture Saliency Adaptive Attention to Image Cartoonization", ICML 2022.
+[ICML 2022] Official code of paper "Learning to Incorporate Texture Saliency Adaptive Attention to Image Cartoonization".
 
 # Citation #
 <pre>
