@@ -7,7 +7,7 @@
 @inproceedings{gao2022learning,
   title={Learning to Incorporate Texture Saliency Adaptive Attention to Image Cartoonization},
   author={Gao, Xiang and Zhang, Yuqi and Tian, Yingjie},
-  booktitle={International Conference on Machine Learning},
+  booktitle={Proceedings of the International Conference on Machine Learning},
   pages={7183--7207},
   year={2022},
   organization={PMLR}
